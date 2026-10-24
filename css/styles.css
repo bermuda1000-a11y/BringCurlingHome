@@ -782,3 +782,9 @@ body.lightbox-open {
 body.lightbox-open {
     overflow: hidden;
 }
+.visuals-site-section {
+    padding-top: 5px;
+}
+.visuals-intro-section {
+    padding-bottom: 10px;
+}
