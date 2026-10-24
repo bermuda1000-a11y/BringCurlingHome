@@ -36,24 +36,109 @@
     </header>
 
     <main>
-        <section class="page-hero">
-            <div class="container">
-                <h1>The Vision</h1>
-                <p>Plans, visuals and ideas for the proposed curling centre.</p>
-            </div>
-        </section>
+    <section class="page-hero">
+        <div class="container">
+            <h1>The Vision</h1>
+            <p>Plans, visuals and ideas for the proposed curling centre.</p>
+        </div>
+    </section>
 
-        <section class="section">
-            <div class="container">
-                <h2>Bringing the vision to life</h2>
-                <p class="section-intro">This page will showcase site plans, building plans, artist's impressions, layouts and other visuals as the project develops.</p>
-                <div class="card-grid">
-                    <div class="card"><h3>Coming soon</h3><p>This section is ready for the detailed project content, photographs, figures and supporting information.</p></div>
-                    <div class="card"><h3>Evidence</h3><p>We will add the relevant plans, research, statistics and supporting material here as the project develops.</p></div>
-                    <div class="card"><h3>Updates</h3><p>Key developments and milestones will be added to keep supporters informed.</p></div>
-                </div>
+    <section class="section">
+        <div class="container">
+            <h2>Bringing the vision to life</h2>
+
+            <p>
+                A project of this size requires professional expertise
+                and careful planning. Curl Ayrshire Charity has engaged
+                a team of experienced consultants to develop the
+                proposals for the new curling facility.
+            </p>
+
+            <p>
+                Our design team includes Denham Youd Architects,
+                based in Ayr, and Clancy Consulting, civil engineers
+                based in Prestwick. We have also engaged Harley Haddow
+                to prepare an energy report and Thompson Gray as our
+                cost consultants.
+            </p>
+
+            <p>
+                Their work will help us develop the building design,
+                assess its energy performance and establish the costs
+                of delivering the project. These services are required
+                to prepare the plans and supporting documentation for
+                South Ayrshire Council.
+            </p>
+
+            <p>
+                A pre-app planning application has been submitted, and we are
+                awaiting the outcome.
+            </p>
+
+            <p>
+                Several iterations of the design have already been
+                produced as the proposals have evolved. The images
+                below illustrate the proposed site, building layout,
+                external appearance and internal facilities.
+            </p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2>The site and its setting</h2>
+            <p>
+                The proposed facility will be located beside Somerset Park,
+                providing a new home for curling within the wider Ayr
+                United development. The images below show the location
+                and the current proposed site layout.
+            </p>
+
+            <div class="visuals-gallery">
+                <figure>
+                    <a href="images/visuals/aeriel1.png"
+                       class="lightbox-link">
+                        <img src="images/visuals/aeriel1.png"
+                             alt="Aerial view of Somerset Park and the proposed curling centre site">
+                    </a>
+                    <figcaption>
+                        Aerial view of Somerset Park and the surrounding site
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <a href="images/visuals/aeriel2.png"
+                       class="lightbox-link">
+                        <img src="images/visuals/aeriel2.png"
+                             alt="Wider aerial view showing the proposed site beside Ayr United">
+                    </a>
+                    <figcaption>
+                        Wider view of the site and surrounding area
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <a href="images/visuals/site-plan1.png"
+                       class="lightbox-link">
+                        <img src="images/visuals/site-plan1.png"
+                             alt="Proposed site plan showing the curling rink, parking and access">
+                    </a>
+                    <figcaption>
+                        Proposed site plan
+                    </figcaption>
+                </figure>
             </div>
-        </section>
+        </div>
+    </section>
+
+    <div class="lightbox" id="visuals-lightbox"
+         role="dialog" aria-modal="true"
+         aria-label="Enlarged project image" aria-hidden="true">
+        <button class="lightbox-close" type="button"
+                aria-label="Close enlarged image">&times;</button>
+        <img class="lightbox-image" src="" alt="">
+        <p class="lightbox-caption"></p>
+    </div>
     </main>
 
     <footer class="site-footer">
@@ -63,5 +148,71 @@
         </div>
     </footer>
     <script src="js/script.js"></script>
+
+    <script>
+(() => {
+    const lightbox = document.getElementById('visuals-lightbox');
+    if (!lightbox) return;
+
+    const largeImage = lightbox.querySelector('.lightbox-image');
+    const caption = lightbox.querySelector('.lightbox-caption');
+    const closeButton = lightbox.querySelector('.lightbox-close');
+    const links = document.querySelectorAll('.visuals-gallery .lightbox-link');
+
+    function openLightbox(link) {
+        const image = link.querySelector('img');
+        largeImage.src = link.href;
+        largeImage.alt = image ? image.alt : '';
+        caption.textContent =
+            link.closest('figure')?.querySelector('figcaption')?.textContent || '';
+
+        lightbox.classList.add('is-open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('lightbox-open');
+        closeButton.focus();
+    }
+
+    function closeLightbox() {
+        lightbox.classList.remove('is-open');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('lightbox-open');
+        largeImage.src = '';
+    }
+
+    links.forEach(link => {
+        link.addEventListener('click', event => {
+            event.preventDefault();
+            openLightbox(link);
+        });
+    });
+
+    closeButton.addEventListener('click', event => {
+        event.stopPropagation();
+        closeLightbox();
+    });
+
+    lightbox.addEventListener('click', closeLightbox);
+
+    largeImage.addEventListener('click', event => {
+        event.stopPropagation();
+    });
+
+    caption.addEventListener('click', event => {
+        event.stopPropagation();
+    });
+
+    document.addEventListener('keydown', event => {
+        if (
+            event.key === 'Escape' ||
+            event.key === 'Backspace'
+        ) {
+            if (lightbox.classList.contains('is-open')) {
+                event.preventDefault();
+                closeLightbox();
+            }
+        }
+    });
+})();
+</script>
 </body>
 </html>
