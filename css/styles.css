@@ -303,7 +303,7 @@ a { color: inherit; }
 
 .image-card {
     position: relative;
-    min-height: 190px;
+    min-height: 220px;
     overflow: hidden;
     border-radius: 6px;
     color: var(--white);
@@ -582,4 +582,94 @@ a { color: inherit; }
     .section { padding: 48px 0; }
     .progress { grid-template-columns: 1fr; }
     .progress-heading { align-items: start; flex-direction: column; }
+}
+
+.funding-list {
+    padding-left: 22px;
+    margin-bottom: 30px;
+}
+
+.funding-list li {
+    margin-bottom: 8px;
+}
+
+.funding-actions .card {
+    height: 100%;
+}
+
+.pledge-content {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.pledge-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.pledge-qr {
+    display: block;
+    width: 120px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+    .pledge-content {
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .pledge-qr {
+        width: 95px;
+    }
+}
+/* Funding page action tiles */
+.funding-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.funding-actions .card {
+    box-sizing: border-box;
+    padding: 24px;
+    border: 1px solid #dce5ef;
+    border-radius: 10px;
+    background: #f8fbff;
+}
+
+.funding-actions .card h3 {
+    margin-top: 0;
+}
+
+.pledge-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.pledge-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.pledge-qr {
+    display: block;
+    width: 140px;
+    max-width: 40%;
+    height: auto;
+    flex-shrink: 0;
+}
+
+@media (max-width: 650px) {
+    .funding-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .pledge-qr {
+        width: 110px;
+    }
 }
