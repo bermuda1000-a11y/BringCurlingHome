@@ -946,7 +946,7 @@ body.lightbox-open {
             rgba(8, 39, 76, 0.82),
             rgba(8, 39, 76, 0.88)
         ),
-        url("../images/home/Hero-Temp.jpg") center / cover no-repeat;
+        url("../images/home/hero-temp.jpg") center / cover no-repeat;
     color: #ffffff;
     border: none;
     border-radius: 18px;
