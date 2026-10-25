@@ -963,7 +963,7 @@ body.lightbox-open {
         rgba(8, 39, 76, 0.35),
         rgba(8, 39, 76, 0.45)
     ),
-    url("../images/home/Hero-Temp.jpg") center / cover no-repeat;
+    url("../images/home/hero-temp.jpg") center / cover no-repeat;
 
     color: #ffffff;
     border: 1px solid rgba(255, 255, 255, 0.25);
