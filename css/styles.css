@@ -788,3 +788,203 @@ body.lightbox-open {
 .visuals-intro-section {
     padding-bottom: 10px;
 }
+/* Pledge Progress Tank */
+.pledge-progress-section {
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+
+.pledge-progress-card {
+    text-align: center;
+    background: #f0f7ff;
+    border: 1px solid #d7e8fa;
+    border-radius: 18px;
+    padding: 35px 24px;
+}
+
+.pledge-progress-card h2 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    color: #123f73;
+}
+
+.pledge-progress-intro {
+    margin-bottom: 28px;
+    color: #36516d;
+}
+
+.pledge-tank {
+    position: relative;
+    width: 190px;
+    height: 300px;
+    margin: 0 auto 20px;
+    overflow: hidden;
+    border: 5px solid #8bb6d9;
+    border-radius: 28px 28px 35px 35px;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow:
+        inset 10px 0 15px rgba(255, 255, 255, 0.8),
+        0 8px 18px rgba(18, 63, 115, 0.12);
+}
+
+.pledge-water {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    overflow: hidden;
+    background: linear-gradient(
+        180deg,
+        #66c8f2 0%,
+        #168be0 45%,
+        #0863b5 100%
+    );
+    transition: height 8s ease-in-out;
+}
+
+.pledge-wave {
+    position: absolute;
+    top: -15px;
+    left: -50%;
+    width: 200%;
+    height: 30px;
+    border-radius: 42%;
+    background: rgba(255, 255, 255, 0.42);
+    animation: pledge-wave-motion 5s linear infinite;
+}
+
+.pledge-wave-two {
+    top: -10px;
+    background: rgba(255, 255, 255, 0.22);
+    animation-duration: 7s;
+    animation-direction: reverse;
+}
+
+@keyframes pledge-wave-motion {
+    from {
+        transform: translateX(0) rotate(0deg);
+    }
+    to {
+        transform: translateX(25%) rotate(360deg);
+    }
+}
+
+.pledge-tank-label {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    width: max-content;
+    max-width: 90%;
+    padding: 12px 15px;
+    transform: translate(-50%, -50%);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.92);
+    color: #123f73;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+}
+
+.pledge-tank-label strong {
+    font-size: 25px;
+    line-height: 1.2;
+}
+
+.pledge-tank-label span {
+    font-size: 13px;
+}
+
+.pledge-progress-total {
+    margin: 15px 0 5px;
+    color: #123f73;
+    font-size: 18px;
+}
+
+.pledge-progress-total strong {
+    font-size: 23px;
+}
+
+.pledge-progress-percentage {
+    margin: 8px 0 0;
+    color: #0879cf;
+    font-weight: 700;
+    font-size: 17px;
+}
+
+@media (max-width: 600px) {
+    .pledge-progress-card {
+        padding: 28px 14px;
+    }
+
+    .pledge-tank {
+        width: 165px;
+        height: 270px;
+    }
+
+    .pledge-tank-label strong {
+        font-size: 22px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .pledge-water {
+        transition: none;
+    }
+
+    .pledge-wave {
+        animation: none;
+    }
+}
+/* Pledge thermometer background */
+.pledge-showcase {
+    background:
+        linear-gradient(
+            rgba(8, 39, 76, 0.82),
+            rgba(8, 39, 76, 0.88)
+        ),
+        url("../images/home/Hero-Temp.jpg") center / cover no-repeat;
+    color: #ffffff;
+    border: none;
+    border-radius: 18px;
+}
+
+.pledge-showcase h2,
+.pledge-showcase p,
+.pledge-showcase strong {
+    color: #ffffff;
+}
+.pledge-progress-card {
+    background:
+    linear-gradient(
+        rgba(8, 39, 76, 0.35),
+        rgba(8, 39, 76, 0.45)
+    ),
+    url("../images/home/Hero-Temp.jpg") center / cover no-repeat;
+
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 18px;
+}
+
+.pledge-progress-card h2,
+.pledge-progress-card p,
+.pledge-progress-card strong,
+.pledge-progress-card .pledge-progress-intro,
+.pledge-progress-card .pledge-tank-label,
+.pledge-progress-card .pledge-tank-label span {
+    color: #ffffff;
+}
+.pledge-tank-label,
+.pledge-tank-label strong,
+.pledge-tank-label span {
+    color: #123f70;
+}
+.pledge-tank-label span {
+    color: #123f70 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
