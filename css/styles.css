@@ -988,3 +988,16 @@ body.lightbox-open {
     opacity: 1 !important;
     text-shadow: none !important;
 }
+/* Caption beneath the homepage building image */
+.split-image figure {
+    margin: 0;
+}
+
+.split-image figcaption {
+    margin-top: 8px;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: #666;
+    text-align: center;
+    font-style: italic;
+}
