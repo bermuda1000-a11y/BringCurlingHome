@@ -454,7 +454,12 @@ a { color: inherit; }
 
 .page-hero {
     padding: 72px 0;
-    background: var(--sky);
+    background:
+        linear-gradient(
+            rgba(235, 244, 250, 0.40),
+            rgba(235, 244, 250, 0.40)
+        ),
+        url("../images/hero-images/hero-curling2.png") center / cover no-repeat;
 }
 
 .page-hero h1 {
@@ -676,7 +681,7 @@ a { color: inherit; }
 /* VISUALS GALLERY */
 .visuals-gallery {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 28px;
     margin-top: 30px;
 }
@@ -685,14 +690,12 @@ a { color: inherit; }
     margin: 0;
 }
 
-.visuals-gallery figure:last-child {
-    grid-column: 1 / -1;
-}
-
 .visuals-gallery img {
     display: block;
     width: 100%;
-    height: auto;
+    height: 220px;
+    object-fit: contain;
+    background: #f5f7fa;
     border-radius: 8px;
     cursor: pointer;
 }
@@ -785,9 +788,16 @@ body.lightbox-open {
 .visuals-site-section {
     padding-top: 5px;
 }
+
+
 .visuals-intro-section {
+        padding-bottom: 10px;
+}
+.visuals-design-brief {
+    padding-top: 5px;
     padding-bottom: 10px;
 }
+
 /* Pledge Progress Tank */
 .pledge-progress-section {
     padding-top: 30px;
