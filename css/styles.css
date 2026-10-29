@@ -124,7 +124,7 @@ a { color: inherit; }
 .eyebrow {
     margin: 0 0 7px;
     color: var(--navy);
-    font-size: .75rem;
+    font-size: .95rem;
     font-weight: 800;
     letter-spacing: .2em;
     text-transform: uppercase;
@@ -850,7 +850,7 @@ body.lightbox-open {
         #168be0 45%,
         #0863b5 100%
     );
-    transition: height 8s ease-in-out;
+    transition: height 5s ease-in-out;
 }
 
 .pledge-wave {
@@ -1010,4 +1010,27 @@ body.lightbox-open {
     color: #666;
     text-align: center;
     font-style: italic;
+}
+
+/* Business plan charts */
+.business-plan-charts {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    align-items: center;
+    margin: 30px 0 40px;
+}
+
+.business-plan-charts img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Stack charts on smaller screens */
+@media (max-width: 700px) {
+    .business-plan-charts {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
 }
