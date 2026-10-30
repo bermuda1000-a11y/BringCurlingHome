@@ -13,7 +13,7 @@ if (menuToggle && mainNav) {
 /* Bring Curling Home — Pledge Tank */
 (() => {
     // UPDATE THIS FIGURE as new pledges are received.
-    const currentPledges = 33950;
+    const currentPledges = 35450;
     const pledgeTarget = 150000;
 
     const water = document.getElementById("pledge-water");
